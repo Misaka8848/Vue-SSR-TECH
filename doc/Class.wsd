@@ -1,0 +1,6 @@
+@startuml Class
+title Class 
+class todo {
+    Array todos[Objcect]
+}
+@enduml

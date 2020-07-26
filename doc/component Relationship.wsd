@@ -1,0 +1,12 @@
+@startuml
+title Component Relationship
+(*) --> "app"
+"app" --> "todo"
+"app" -->"header"
+"app" -->"footer"
+"todo" --> "item"
+"item" --> "todo"
+"todo" --> "tabs"
+"tabs" --> "todo"
+
+@enduml

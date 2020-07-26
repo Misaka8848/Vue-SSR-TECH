@@ -2,11 +2,12 @@
  * @Author: Alter 
  * @Date: 2020-07-25 14:54:56 
  * @Last Modified by: Alter
- * @Last Modified time: 2020-07-25 23:59:16
+ * @Last Modified time: 2020-07-26 23:23:08
  */
 <template>
   <section class="real-app">
     <input
+      ref="userInput"
       type="text"
       class="add-input"
       autofocus="autofocus"
@@ -23,6 +24,7 @@
       :todos="todos"
       @toggle = "toggleFilter"
       @clearAllCompleted = "clearAllCompleted"
+      @rest = "setUserInput"
     />
   </section>
 </template>
@@ -55,8 +57,8 @@ export default {
   methods: {
     // e是event对象
     addTodo(e) {
-      //TODO？ this是todo组件本身，methods里面的方法代表组件本身的方法吗？
-      // todos[]是todo组件的属性，todos数组包含的todo对象传递给item组件,所以todo对象是item组件的属性
+      // methods中方法的this指向组件实例本身
+      // todos数组包含的todo对象传递给item组件
       // 父组件和子组件的传递
       this.todos.unshift({
         id: id++,
@@ -66,6 +68,7 @@ export default {
         completed: false,
       });
       e.target.value='';
+      console.log(this);
     },
     deleteTodo(id){
       this.todos.splice(this.todos.findIndex(todo => todo.id === id),1)
@@ -76,6 +79,12 @@ export default {
     clearAllCompleted(){
       this.todos = this.todos.filter(todo => !todo.completed)
     },
+    setUserInput(input_string){
+      this.$refs.userInput.value = input_string
+      this.$refs.userInput.focus()
+      // console.log(input_string);
+    }
+
   },
 };
 </script>
