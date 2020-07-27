@@ -1,5 +1,6 @@
+笔记使用typora软件编写，并非原生markdown语法。
 ## 导学课
-
+[课程地址](https://www.imooc.com/learn/935)
 ### 前端的价值
 
 1. 搭建前端工程：数据缓存、es6和less（可以加快开发效率）。
