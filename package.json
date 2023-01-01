@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "cross-env": "^7.0.2",
-    "css-loader": "^3.6.0",
+    "css-loader": "^6.7.3",
     "file-loader": "^6.0.0",
     "style-loader": "^1.2.1",
     "stylus-loader": "^3.0.2",
